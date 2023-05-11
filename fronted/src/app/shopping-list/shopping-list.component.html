@@ -1,0 +1,55 @@
+<!-- <div class="row">
+    <div class="col-xs-12" *ngFor="let kurs of kursevi; let i = index">
+        <div class="col-xs-6 border border-dark">
+            {{kurs.imeKursa}}
+
+
+        </div>
+        <div class="col-xs-4">
+            <button class="btn btn-danger" (click)="izbaciIzListe(i)">X</button>
+
+        </div>
+
+
+
+    </div>
+    <div class="col-xs-6"><button class="btn btn-success" (click)="kupi()">Kupi</button></div>
+
+</div> -->
+<div class="col-xs-12" *ngFor="let kurs of kursevi; let i = index">
+    <div class="col col-xs-6" style="margin-top: 20px ;">
+        <a style="cursor: pointer;" class="list-group-item clearfix">
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{ kurs.imeKursa }} {{kurs.cenaKursa}}$</h4>
+                <p class="list-group-item-text">{{ kurs.opisKursa }}</p>
+            </div>
+            <span class="pull-right">
+                <img [src]="kurs.imageUrl" alt="{{kurs.imeKursa }}" class="img-responsive" style="max-height: 50px;">
+            </span>
+        </a>
+
+
+
+    </div>
+    <div class="col-xs-2">
+        <button class="btn btn-danger" style="margin-top:20px ;" (click)="izbaciIzListe(i)">X</button>
+
+    </div>
+
+</div>
+
+
+
+<div *ngIf="kursevi.length > 0" class="col-xs-6" style="margin-top:50px ;">
+    <div>
+        Ukupna Cena: {{ukupnaCena}}$
+    </div>
+    
+    <button class="btn btn-success" (click)="kupi()">Kupi</button>
+</div>
+<div style="text-align: center;" *ngIf="kursevi.length === 0">
+    <h4>Nemate nijedan proizvod u vasoj korpi</h4>
+    <a routerLink="/">
+       <button class="btn btn-primary mt-3">Idi na listu proizvoda</button>
+    </a>
+ </div>

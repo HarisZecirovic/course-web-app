@@ -1,0 +1,18 @@
+<div *ngFor="let kurs of noviKursevi">
+  <div class="col-sm-3 mt-3" [routerLink]="['/detalji', kurs.idKursa]">
+    <a style="cursor: pointer; height: 150px" class="list-group-item clearfix">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ kurs.imeKursa }}</h4>
+        <p class="list-group-item-text">{{ kurs.opisKursa }}</p>
+      </div>
+      <span class="pull-right">
+        <img
+          [src]="kurs.imageUrl"
+          alt="{{ kurs.imeKursa }}"
+          class="img-responsive"
+          style="height: 50px; width: 50px"
+        />
+      </span>
+    </a>
+  </div>
+</div>
